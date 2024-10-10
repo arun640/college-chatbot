@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>SCMS</title>
+    <meta name="description" content="">
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/scms.jpg">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="assets/css/rsmenu-main.css">
+
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+
+
+
+
+    <title>Chatbot UI</title>
+    <style>
+        /* Add your CSS styles here */
+        
+        .chat-container {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+        }
+        
+        .user-message {
+            background-color: #f0f0f0;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .bot-message {
+            background-color: #e0e0e0;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<style>
+    @media only screen and (max-width: 600px) {
+        .large {
+            display: none !important;
+        }
+    }
+    
+    @media only screen and (min-width: 992px) {
+        .medium {
+            display: none !important;
+        }
+    }
+    
+    @media only screen and (min-width: 600px) {
+        .small {
+            display: none !important;
+        }
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        background-color: #00000063;
+    }
+</style>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+
+<body class="home-style2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="full-width-header header-style2">
+
+        <header id="rs-header" class="rs-header">
+
+            <div class="topbar-area">
+                <div class="container">
+                    <div class="row y-middle">
+                        <div class="col-md-4">
+                            <ul class="topbar-contact">
+                                <li>
+                                    <i class="flaticon-email"></i>
+                                    <a href="mailto:sset@scmsgroup.org">sset@scmsgroup.org</a>
+                                </li>
+                                <li>
+                                    <i class="flaticon-call"></i>
+                                    <a href="tel:+91-70347 80072">+91-70347 80072</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-8 text-right">
+                            <ul class="topbar-right">
+                                <li class="login-register" style="background: #f00;padding: 4px;border-radius: 8px;">
+                                    <a href="https://scmsgroup.org/sset/admission/" target="_blank" style="font-size: 14px;font-weight: 600;">&nbsp;&nbsp;ADMISSION DATA ENTRY</a>
+                                    <i class="fa fa-chevron-right" style="color: #fff;font-size: 14px;"></i>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-area">
+                <div class="container">
+                    <div class="row y-middle">
+                        <div class="col-lg-12">
+                            <div class="large">
+                                <div class="logo-cat-wrap">
+                                    <div class="logo-part ">
+                                        <a class="dark-logo" href="index.html">
+                                            <img src="assets/images/header.png" alt="" style="max-height: 90px;padding-left: 45px;">
+                                        </a>
+                                        <a class="light-logo" href="index.php">
+                                            <img src="assets/images/header.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="small">
+                                <div class="logo-cat-wrap">
+                                    <div class="logo-part pr-90">
+                                        <a class="dark-logo" href="index.php">
+
+                                            <img src="assets/images/header.png" alt="" style="max-height: 80px;max-width: 290px;height: 52px;">
+                                        </a>
+                                        <a class="light-logo" href="index.php">
+                                            <img src="assets/images/header.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="rs-menu-area">
+                                <div class="main-menu pr-90">
+                                    <div class="mobile-menu">
+                                        <a class="rs-menu-toggle">
+                                            <i class="fa fa-bars"></i>
+                                        </a>
+                                    </div>
+                                    <nav class="rs-menu">
+                                        <ul class="nav-menu">
+                                            <li class="small medium">
+                                                <a href="https://scmsgroup.org/sset/admission/" target="_blank" style="background: #f00;color: #fff !important;">&nbsp;&nbsp;ADMISSION DATA ENTRY&nbsp;&nbsp;</a>
+                                            </li>
+                                            <li class=" current-menu-item">
+                                                <a href="index.html">Home</a>
+                                            </li>
+                                            <li class="menu-item-has-children">
+                                                <a href="#">About Us</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="https://scmsgroup.org/sset/awards/">Accredition and Ranking</a> </li>
+                                                    <li><a href="https://scmsgroup.org/sset/management/">Mangement</a> </li>
+                                                    <li><a href="https://scmsgroup.org/sset/vision-mission/">Vision & Mission</a></li>
+                                                    <li><a href="https://scmsgroup.org/sset/directors-message/">Campus director</a> </li>
+                                                    <li><a href="https://scmsgroup.org/sset/principal-message/">Principal</a> </li>
+                                                </ul>
+                                            </li>
+                                            <li class="rs-mega-menu mega-rs menu-item-has-children"> <a href="#">Departments</a>
+                                                <ul class="mega-menu">
+                                                    <li class="mega-menu-container">
+                                                        <div class="mega-menu-innner">
+                                                            <div class="single-megamenu">
+                                                                <ul class="sub-menu">
+                                                                    <li><a href="https://scmsgroup.org/sset/department-of-civil-engineering/"> Civil Engineering</a> </li>
+                                                                    <li><a href="https://scmsgroup.org/sset/department-of-computer-science-engineering/">Computer&nbsp;Science&nbsp;&&nbsp;Engineering</a> </li>
+                                                                    <li><a href="https://scmsgroup.org/sset/department-page-electronics-communication-engineering/">Electronics&nbsp;&&nbsp;Communication&nbsp;Engineering</a> </li>
+                                                                    <li><a href="https://scmsgroup.org/sset/department-of-computer-science-engineering/">Artificial Intelligence & Data Science</a> </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="single-megamenu">
+                                                                <ul class="sub-menu">
+                                                                    <li><a href="https://scmsgroup.org/sset/department-of-mechanical-engineering/">Mechanical Engineering</a> </li>
+                                                                    <li><a href="https://scmsgroup.org/sset/department-of-electrical-electronics-engineering/">Electrical&nbsp;&&nbsp;Electronics&nbsp;Engineering</a> </li>
+                                                                    <li><a href="https://scmsgroup.org/sset/department-of-automobile-engineering/">Automobile Engineering</a> </li>
+                                                                    <li><a href="https://scmsgroup.org/sset/basic-science-humanities/">Basics&nbsp;Sciences&nbsp;Humanities</a> </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+
+
+
+
+                                            <li class="menu-item-has-children">
+                                                <a href="#">Research</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="https://scmsgroup.org/sset/Research/MOU/UnoTech%20collaboration%202022.pdf">Consultancy</a> </li>
+                                                    <li><a href="https://scmsgroup.org/sset/research-cell/#Robotics">Research Cell</a> </li>
+                                                    <li><a href="https://scmsgroup.org/sset/research/">Research</a> </li>
+                                                    <li><a href="https://scmsgroup.org/sset/IEDC/">IEDC</a> </li>
+                                                    <li><a href="https://scmsgroup.org/sset/mou/">MoU's</a> </li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item-has-children">
+                                                <a href="https://scmsgroup.org/sset/scms-infrastructure/">Infrastructure</a>
+
+                                            </li>
+                                            <li class="menu-item-has-children">
+                                                <a href="https://scmsgroup.org/sset/campus-life/">Campus Life</a>
+
+                                            </li>
+
+
+                                            <li>
+                                                <a href="https://scmsgroup.org/sset/academics/">Academics</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://scmsgroup.org/sset/placement-overview/">Placement</a>
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </header>
+
+    </div>
+
+    <style>
+        @media only screen and (max-width: 767px) {
+            .rs-slider.style1 .slider-content {
+                padding: 57px 0;
+            }
+        }
+        
+        details {
+            position: relative;
+        }
+        
+        details summary {
+            display: block;
+            cursor: pointer;
+            color: #41ff1f;
+        }
+        
+        details summary:focus {
+            outline: none;
+        }
+        
+        details[open] {
+            display: block;
+            padding-bottom: 25px;
+            padding-top: 10px;
+            animation: open .2s linear;
+        }
+        
+        details[open] summary {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        details #open {
+            padding-left: 5px;
+            text-align: middle;
+        }
+        
+        details #open:after {
+            display: inline-block;
+            position: relative;
+            top: -3px;
+            padding-left: 8px;
+            content: "\00bb";
+            transform: rotate(90deg);
+        }
+        
+        details[open] #open {
+            display: none;
+        }
+        
+        details #close {
+            display: none;
+        }
+        
+        details[open] #close {
+            display: block;
+        }
+        
+         ::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+
+    <div class="main-content">
+
+        <div class="rs-slider style1">
+            <div class="rs-carousel owl-carousel" data-loop="true" data-items="1" data-margin="0" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="7050" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false"
+                data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nazv="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false"
+                data-md-device="1" data-md-device-nav="true" data-md-device-dots="false">
+                <div class="slider-content style1" style="background: url(images/sset1.jpg);background-size: cover;background-position: center;background-repeat: no-repeat;">
+                </div>
+                <div class="slider-content style1" style="background: url(images/sset2.jpg);background-size: cover;background-position: center;background-repeat: no-repeat;">
+                </div>
+                <div class="slider-content style1" style="background: url(images/sset3.jpg);background-size: cover;background-position: center;background-repeat: no-repeat;">
+                </div>
+                <div class="slider-content style1" style="background: url(images/sset4.jpg);background-size: cover;background-position: center;background-repeat: no-repeat;">
+                </div>
+                <div class="slider-content style1" style="background: url(images/sset5.jpg);background-size: cover;background-position: center;background-repeat: no-repeat;">
+                </div>
+                <div class="slider-content style1" style="background: url(images/sset6.jpg);background-size: cover;background-position: center;background-repeat: no-repeat;">
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12" style="background: #000;">
+                <marquee direction="left">
+                    <a href="https://admissions.scms.edu.in/" style="color: #fff;">Nine UG Programmes and Six PG Programmes of SSET got accreditation from National Board of Accreditation(NBA) || CLICK HERE</a>
+                </marquee>
+            </div>
+        </div>
+
+
+        <br>
+
+        <div class="rs-services style1 container">
+            <div class="row no-gutter">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item overly1" style="border-radius: 10px 0px 0px 10px;">
+                        <img src="assets/images/wp3185342.webp" alt="" style="height: 185px;width: 100%;">
+                        <div class="content-part">
+                            <img src="assets/images/services/icons/1.png" alt="">
+                            <h4 class="title"><a href="https://scmsgroup.org/sset/academics/">Academics</a></h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item overly2">
+                        <img src="assets/images/wp3185342.webp" alt="" style="height: 185px;width: 100%;">
+                        <div class="content-part">
+                            <img src="assets/images/services/icons/2.png" alt="">
+                            <h4 class="title"><a href="https://scmsgroup.org/sset/research-cell/#Robotics">Research Cell</a></h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item overly3">
+                        <img src="assets/images/wp3185342.webp" alt="" style="height: 185px;width: 100%;">
+                        <div class="content-part">
+                            <img src="assets/images/services/icons/3.png" alt="">
+                            <h4 class="title"><a href="https://scmsgroup.org/sset/placement-overview/">Placement</a></h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item overly4" style="border-radius: 0px 10px 10px 0px;">
+                        <img src="assets/images/wp3185342.webp" alt="" style="height: 185px;width: 100%;">
+                        <div class="content-part">
+                            <img src="assets/images/services/icons/4.png" alt="">
+                            <h4 class="title"><a href="https://scmsgroup.org/sset/sports/">Sport</a></h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <br>
+
+        <div class="rs-degree style1 modify gray-bg pt-10 pb-10 md-pt-30 md-pb-30">
+            <div class="container">
+                <div class="sec-title mb-10 text-center">
+                    <div class="sub-title primary">Departments </div>
+                </div>
+                <div class="row y-middle">
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="degree-wrap">
+                            <img src="assets/images/degrees/ce.jpg" alt="" style="height: 240px;">
+                            <div class="title-part">
+                                <h4 class="title">Civil Engineering</h4>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="title"><a href="https://scmsgroup.org/sset/department-of-civil-engineering/">Civil Engineering</a></h5>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="degree-wrap">
+                            <img src="assets/images/degrees/cs.jpg" alt="" style="height: 240px;">
+                            <div class="title-part">
+                                <h4 class="title">Computer Science & Engineering</h4>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="title"><a href="https://scmsgroup.org/sset/department-of-computer-science-engineering/">Computer Science & Engineering</a></h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="degree-wrap">
+                            <img src="assets/images/degrees/ec.jpg" alt="" style="height: 240px;">
+                            <div class="title-part">
+                                <h4 class="title">Electronics & Communication Engineering</h4>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="title"><a href="https://scmsgroup.org/sset/department-page-electronics-communication-engineering/">Electronics & Communication Engineering</a></h5>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="degree-wrap">
+                            <img src="assets/images/degrees/eee.jpg" alt="" style="height: 240px;">
+                            <div class="title-part">
+                                <h4 class="title">Electrical & Electronics Engineering</h4>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="title"><a href="https://scmsgroup.org/sset/department-of-electrical-electronics-engineering/">Electrical & Electronics</a></h5>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="degree-wrap">
+                            <img src="assets/images/degrees/kV29KfjpXuHCrTFpNQZHAlscd2MwtvBpFIPRLE8r.webp" alt="" style="height: 240px;">
+                            <div class="title-part">
+                                <h4 class="title">Automobile Engineering</h4>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="title"><a href="https://scmsgroup.org/sset/department-of-automobile-engineering/">Automobile Engineering</a></h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="degree-wrap">
+                            <img src="assets/images/degrees/me.jpg" alt="" style="height: 240px;">
+                            <div class="title-part">
+                                <h4 class="title">Mechanical Engineering</h4>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="title"><a href="https://scmsgroup.org/sset/department-of-mechanical-engineering/">Mechanical Engineering</a></h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="degree-wrap">
+                            <img src="assets/images/degrees/science.jpg" alt="" style="height: 240px;">
+                            <div class="title-part">
+                                <h4 class="title">Basic Sciences & Humanities</h4>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="title"><a href="https://scmsgroup.org/sset/basic-science-humanities/">Basic Sciences & Humanities</a></h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="degree-wrap">
+                            <img src="assets/images/degrees/images.jpeg" alt="" style="height: 240px;">
+                            <div class="title-part">
+                                <h4 class="title">Artificial Intelligence and Data Science</h4>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="title"><a href="https://scmsgroup.org/sset/department-of-computer-science-engineering/">Artificial Intelligence and Data Science</a></h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <style>
+        .mybutton1 {
+            position: fixed;
+            bottom: 105px;
+            right: 0px;
+            animation: blink 1.65s linear infinite;
+            z-index: 9999 !important;
+            top: 480px;
+            height: auto;
+            display: block;
+        }
+        
+        .admission1 {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 15px;
+            font-size: 15px !important;
+            line-height: 41px;
+            display: block;
+            line-height: 25px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+        
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <div id="scrollUp">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- End scrollUp  -->
+
+
+
+
+
+
+    <footer>
+        <div class="footer-chat-icon" id="footerChatIcon">
+            <img src="download.png" h alt="Chat Icon">
+        </div>
+    </footer>
+
+    <!-- Chat bot container -->
+    <div class="chat-bot-container" id="chatBotContainer">
+        <!-- Chat header -->
+        <div class="chat-header">
+            <h2>SSETmate!</h2>
+            <span class="close-icon" id="closeChatBot">&times;</span>
+        </div>
+        <!-- Chat body -->
+        <div class="chat-body" id="chatBody">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <!-- Chat input -->
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendMessage">Send</button>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="script.js"></script>
+
+    <!-- modernizr js -->
+    <script src="assets/js/modernizr-2.8.3.min.js "></script>
+    <!-- jquery latest version -->
+    <script src="assets/js/jquery.min.js "></script>
+    <!-- Bootstrap v4.4.1 js -->
+    <script src="assets/js/bootstrap.min.js "></script>
+    <!-- Menu js -->
+    <script src="assets/js/rsmenu-main.js "></script>
+    <!-- op nav js -->
+    <script src="assets/js/jquery.nav.js "></script>
+    <!-- owl.carousel js -->
+    <script src="assets/js/owl.carousel.min.js "></script>
+    <!-- Slick js -->
+    <script src="assets/js/slick.min.js "></script>
+    <!-- isotope.pkgd.min js -->
+    <script src="assets/js/isotope.pkgd.min.js "></script>
+    <!-- imagesloaded.pkgd.min js -->
+    <script src="assets/js/imagesloaded.pkgd.min.js "></script>
+    <!-- wow js -->
+    <script src="assets/js/wow.min.js "></script>
+    <!-- Skill bar js -->
+    <script src="assets/js/skill.bars.jquery.js "></script>
+    <script src="assets/js/jquery.counterup.min.js "></script>
+    <!-- counter top js -->
+    <script src="assets/js/waypoints.min.js "></script>
+    <!-- video js -->
+    <script src="assets/js/jquery.mb.YTPlayer.min.js "></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js "></script>
+    <!-- plugins js -->
+    <script src="assets/js/plugins.js "></script>
+    <!-- contact form js -->
+    <script src="assets/js/contact.form.js "></script>
+    <!-- main js -->
+    <script src="assets/js/main.js "></script>
+</body>
+
+</html>
+<script>
+    $.ajax({
+        success: function(anno) {
+            for (i = 0; i < 3; i++) {
+                if (i == 0) {
+                    $("#news-list ").append('<a href="announcements.php " style="color: #000; "><img src="assets/images/new.gif " style="width: 65px; ">' + anno.data[i].title + '</a>');
+                } else {
+                    $("#news-list ").append('<a href="announcements.php " style="color: #000; ">&nbsp;&nbsp;<i class="fa fa-square " style="color: #ff5421; "></i>&nbsp;&nbsp;' + anno.data[i].title + '</a>');
+                }
+            }
+        },
+        type: 'get',
+        url: 'https://www.nssce.ac.in/advanced/backend/web/index.php?r=api/announcements/view-announcement',
+        data: {
+            id: '',
+            count: "3 "
+        },
+        cache: false,
+        dataType: 'json'
+    });
+</script>
+<script>
+    $.ajax({
+        success: function(anno) {
+            for (i = 0; i < 3; i++) {
+                if (i == 0) {
+                    $("#news-list ").append('<a href="announcements.php " style="color: #000; "><img src="assets/images/new.gif " style="width: 65px; ">' + anno.data[i].title + '</a>');
+                } else {
+                    $("#news-list ").append('<a href="announcements.php " style="color: #000; ">&nbsp;&nbsp;<i class="fa fa-square " style="color: #ff5421; "></i>&nbsp;&nbsp;' + anno.data[i].title + '</a>');
+                }
+            }
+        },
+        type: 'get',
+        url: 'https://www.nssce.ac.in/advanced/backend/web/index.php?r=api/announcements/view-announcement',
+        data: {
+            id: '',
+            count: "3 "
+        },
+        cache: false,
+        dataType: 'json'
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(".testimonial-carousel ").slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: true,
+            prevArrow: $(".testimonial-carousel-controls .prev "),
+            nextArrow: $(".testimonial-carousel-controls .next ")
+        });
+    });
+</script>
+<style type="text/css ">
+        li {
+        color: black
+    }
+    
+    .vl {
+        border-left: 1px solid white;
+        height: 500px;
+    }
+    
+    .news-date {
+        bottom: 0px;
+        left: 0px;
+        padding: 4px 0 2px 20px;
+        position: absolute;
+        width: 100%;
+    }
+    
+    .ptb-10 {
+        padding: 2px 0;
+    }
+    
+    h4 {
+        font-size: 20px;
+    }
+    
+    p {
+        /*font-family: 'Lato', sans-serif;*/
+        font-weight: normal;
+        color: #666666;
+        font-size: 13px;
+        line-height: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .testimonials {
+        overflow: hidden;
+        position: relative;
+        max-height: 300px;
+    }
+    
+    .testimonials {
+        background: #161d25;
+    }
+    
+    .one-slide,
+    .testimonial,
+    .message {
+        border: none !important;
+        outline: none !important;
+    }
+    
+    .icon-overlay {
+        position: absolute;
+        opacity: 0.3;
+        right: 10%;
+        top: 0;
+        height: auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .carousel-controls .control {
+        position: absolute;
+        transform: translateY(-50%);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        z-index: 1;
+    }
+    
+    .prev {
+        left: -2.25rem;
+    }
+    
+    .next {
+        right: -2.25rem;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .testimonials {
+            max-height: 700px;
+        }
+        .icon-overlay {
+            height: 300px;
+            top: calc(50% - 150px);
+        }
+        .carousel-controls .control {
+            width: 25px;
+            height: 25px;
+            top: inherit;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+        .control i {
+            font-size: .7rem;
+        }
+        .testimonials .message {
+            font-size: 15px;
+        }
+        .testimonials h2 {
+            font-size: 1.5rem;
+        }
+</style>.testimonials h2 { font-size: 1.5rem; }
+</style>
